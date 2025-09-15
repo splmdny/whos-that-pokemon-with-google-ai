@@ -18,7 +18,7 @@ const App: React.FC = () => {
   const [remainingGuesses, setRemainingGuesses] = useState(3);
   const [clues, setClues] = useState<string[]>([]);
 
-  const playIntroSound = useAudio('https://memesoundeffects.com/download.php?url=https://media.memesoundeffects.com/2023/12/Whos20that20Pokemon.mp3');
+  const playIntroSound = useAudio('https://www.myinstants.com/media/sounds/whos-that-pokemon.mp3');
   const playCorrectSound = useAudio('https://www.myinstants.com/media/sounds/correct-answer-sound-effect.mp3');
   const playWrongSound = useAudio('https://www.myinstants.com/media/sounds/wrong-answer-sound-effect.mp3');
 
@@ -129,7 +129,7 @@ const App: React.FC = () => {
     }
     
     if (gameState === GameState.MORPHING_CORRECT) {
-      return <Loader message="Gotcha you got the pokemon" showEllipsisAnimation={true} />;
+      return <Loader message="Gotcha! Revealing the true form..." showEllipsisAnimation={true} />;
     }
 
     if (gameState === GameState.MORPHING_WRONG) {
