@@ -69,6 +69,9 @@ export const generateClue = async (pokemonName: string, clueType: ClueType): Pro
         case ClueType.APPEARANCE_HABITAT:
             prompt = `Give me a short, one-sentence Pokedex-style clue for the Pokémon "${pokemonName}", focusing on its appearance or habitat. Do not mention its name or its primary colors. For example, for Pikachu, a good clue is "It lives in forests and stores electricity in its cheeks."`;
             break;
+        case ClueType.EASY_POKEDEX_ENTRY:
+            prompt = `Give me a short, one-sentence, very easy Pokedex-style clue for the Pokémon "${pokemonName}". The clue should be simple and hint strongly at its identity without using its name. For example, for Snorlax, a good clue is "This large Pokémon is famous for blocking paths while it sleeps." Do not mention its color.`;
+            break;
     }
     
     const response = await ai.models.generateContent({

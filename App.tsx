@@ -84,7 +84,8 @@ const App: React.FC = () => {
       if (newRemainingGuesses > 0) {
         setGameState(GameState.GENERATING_CLUE);
         try {
-          const clueType = newRemainingGuesses === 2 ? ClueType.COLOR : ClueType.APPEARANCE_HABITAT;
+          // Progressive Clues: Hardest first, easiest last.
+          const clueType = newRemainingGuesses === 2 ? ClueType.COLOR : ClueType.EASY_POKEDEX_ENTRY;
           const newClue = await generateClue(correctPokemon.name, clueType);
           setClues(prevClues => [...prevClues, newClue]);
         } catch (err) {

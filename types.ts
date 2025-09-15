@@ -17,4 +17,5 @@ export enum GameState {
 export enum ClueType {
   COLOR,
   APPEARANCE_HABITAT,
+  EASY_POKEDEX_ENTRY,
 }
